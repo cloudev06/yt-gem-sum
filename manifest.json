@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Gemini Summarizer",
+  "description": "One-click YouTube video summarization with Google Gemini.",
+  "version": "1.0.0",
+  "permissions": [
+    "tabs"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.youtube.com/*"
+      ],
+      "js": [
+        "youtube.js"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "*://gemini.google.com/*"
+      ],
+      "js": [
+        "gemini.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

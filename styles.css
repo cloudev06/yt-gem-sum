@@ -1,0 +1,132 @@
+/* ===== YouTube Gemini Summarizer v4 — Styles ===== */
+
+/* ── Summarize Button ── */
+
+#gemini-summarize-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 18px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+  position: relative;
+  overflow: hidden;
+  margin-right: 8px;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Light theme */
+html:not([dark]) #gemini-summarize-btn {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #0f0f0f;
+}
+
+html:not([dark]) #gemini-summarize-btn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+#gemini-summarize-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.03);
+}
+
+#gemini-summarize-btn:active {
+  transform: scale(0.97);
+}
+
+/* Gemini Logo */
+#gemini-summarize-btn .gemini-logo {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  transition: filter 0.3s ease;
+}
+
+/* Invert on hover */
+#gemini-summarize-btn:hover .gemini-logo {
+  filter: invert(1);
+}
+
+html:not([dark]) #gemini-summarize-btn .gemini-logo {
+  filter: none;
+}
+
+html:not([dark]) #gemini-summarize-btn:hover .gemini-logo {
+  filter: invert(1);
+}
+
+/* Label */
+#gemini-summarize-btn .gemini-label {
+  line-height: 1;
+  letter-spacing: 0.3px;
+}
+
+/* Tooltip */
+#gemini-summarize-btn[data-tooltip]:hover::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 9999;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ── Toast Notification ── */
+
+#gemini-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: #1a1a2e;
+  color: #e0e0e0;
+  font-family: "Roboto", "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+  z-index: 999999;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+#gemini-toast.gemini-toast-visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Light theme toast */
+html:not([dark]) #gemini-toast {
+  background: #fff;
+  color: #1a1a1a;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    0 0 0 1px rgba(0, 0, 0, 0.04) inset;
+}
