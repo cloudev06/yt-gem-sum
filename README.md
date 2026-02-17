@@ -3,10 +3,10 @@
 ===
 
 how to use:
-chrome://extensions (or brave://extensions)
-turn on developer mode
-load unpacked
-select unzipped folder
+1. chrome://extensions (or brave://extensions)
+2. turn on developer mode
+3. load unpacked
+4. select unzipped folder
 
 ===
 
