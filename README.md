@@ -1,5 +1,12 @@
 # yt-gem-sum
+
+how to use:
+chrome://extensions (or brave://extensions)
+turn on developer mode
+load unpacked
+select unzipped folder
 ===
+
 17th Feb
 1. v1.0.0
 2. git
